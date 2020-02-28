@@ -62,6 +62,7 @@
 
 
   user2 = User.create(email: user2@test.com, password: "password2", password_confirmation: "password2", first_name:Faker::Name.first_name)
+  board1 = Board.create(name: "Work")
   list1 = List.create(name:"To Do", position: 1)
         task1 = Task.new(bullet:"Homework 1", priority: 1)
         task2 = Task.new(bullet:"Homework 2", priority: 2)
@@ -104,7 +105,8 @@
 
 
   user3 = User.create(email: user3@test.com, password: "password3", password_confirmation: "password3", first_name:Faker::Name.first_name)
-    list1 = List.create(name:"To Do", position: 1)
+  board1 = Board.create(name: "Work") 
+  list1 = List.create(name:"To Do", position: 1)
       task1 = Task.new(bullet:"Homework 1", priority: 1)
       task2 = Task.new(bullet:"Homework 2", priority: 2)
       task3 = Task.new(bullet:"Homework 3", priority: 3)
