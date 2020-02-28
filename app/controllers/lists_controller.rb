@@ -1,8 +1,12 @@
 class ListsController < ApplicationController
-  def new
-  end
+  
 
   def index
+    @lists = @board.lists
+  end
+
+  def new
+    
   end
 
   def edit
