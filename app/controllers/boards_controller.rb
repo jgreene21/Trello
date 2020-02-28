@@ -1,8 +1,12 @@
 class BoardsController < ApplicationController
-  def new
-  end
+  
 
   def index
+    @boards = current_user.boards
+  end
+
+  def new
+    
   end
 
   def edit
