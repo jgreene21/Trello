@@ -3,9 +3,9 @@ class BoardsController < ApplicationController
   before_action :set_board, except: [:index, :new, :create]
 
   def index
-    @boards = board.all
+    @boards = current_user.boards
   end
- 
+
   def show
     @lists = @board.lists
   end
@@ -16,7 +16,7 @@ class BoardsController < ApplicationController
 
   def edit
   end
- 
+
   def create
     @board = board.new(board_params)
     if @board.save
@@ -25,7 +25,7 @@ class BoardsController < ApplicationController
       render :new
     end
   end
-  
+
   def update
     if @board.update(board_params)
       redirect_to @board
@@ -42,7 +42,7 @@ class BoardsController < ApplicationController
 
   def new_list
     @lists = list.all.where(board_id: nil)
-  
+
   end
 
   def add_list
