@@ -1,2 +1,14 @@
-<h1>Boards#index</h1>
-<p>Find me in app/views/boards/index.html.erb</p>
+<h1> My Boards</h1>
+
+<div class="ui inverted segment">
+  <div class="ui inverted relaxed divided list">
+    <div class="item">
+      <div class="content">
+      <% @boards.each do |board| %>
+      <hr />
+      <%= link_to board.name, board, class: "header" %>
+        <% end %> 
+      </div>
+    </div>
+  </div>
+ </div> 
