@@ -1,0 +1,9 @@
+<hr />
+<ul>
+<% @board.lists.each do |list|%>
+<li><%= list.name %></li>
+<ul>
+<li><%= link_to "Edit Name", edit_board_list_path(@board, list) %></li>
+</ul>
+<% end %>
+</ul>
