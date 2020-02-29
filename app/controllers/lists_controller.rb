@@ -1,4 +1,5 @@
 class ListsController < ApplicationController
+  before_action :set_list, only: [:edit, :update, :destroy, :show]
 
 
   def index
