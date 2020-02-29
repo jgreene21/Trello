@@ -3,7 +3,7 @@ class BoardsController < ApplicationController
   before_action :set_board, except: [:index, :new, :create]
 
   def index
-    @boards = current_use.boards
+    @boards = current_user.boards
   end
  
   def show
@@ -15,6 +15,7 @@ class BoardsController < ApplicationController
   end
 
   def edit
+    #before_action
   end
  
   def create
