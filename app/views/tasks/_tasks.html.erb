@@ -1,0 +1,7 @@
+<%= link_to 'New Task', new_list_task_path(@list) %>
+<hr />
+<ol>
+<% @list.tasks.each do |tasks|%>
+<li><%= "#{tasks.priority} - "%><%= link_to tasks.bullet, list_task_path(@list, tasks) %></li>
+<% end %>
+</ol>

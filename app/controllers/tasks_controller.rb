@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:edit, :update, :destroy, :show]
   before_action :set_list
+  before_action :set_board
 
   def index
     @tasks = @list.tasks
@@ -13,7 +14,7 @@ class TasksController < ApplicationController
   def create
     @task = @list.tasks.new(task_params)
     if @task.save
-      redirect_to list_tasks_path(@list)
+      redirect_to board_path(@board)
     else
       render :new
     end
@@ -24,7 +25,7 @@ class TasksController < ApplicationController
 
   def update
     if @task.update(task_params)
-      redirect_to list_tasks_path(@list)
+      redirect_to board_path(@board)
     else
       render :edit
     end
@@ -46,6 +47,11 @@ class TasksController < ApplicationController
 
   def set_list
     @list = List.find(params[:list_id])
+  end
+
+  def set_board
+    board = @list.board
+    @board = Board.find(board.id)
   end
 
   def task_params
