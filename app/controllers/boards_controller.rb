@@ -4,7 +4,7 @@ class BoardsController < ApplicationController
   def index
     @boards = current_user.boards
   end
- 
+
   def show
   end
 
@@ -37,7 +37,6 @@ class BoardsController < ApplicationController
     @board.destroy
     redirect_to boards_path
   end
-
 
   private
     def set_board
