@@ -15,6 +15,7 @@ class BoardsController < ApplicationController
   end
 
   def edit
+    #before_action
   end
 
   def create
