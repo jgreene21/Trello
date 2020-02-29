@@ -1,6 +1,6 @@
 <h1><%= @list.name %></h1>
 <%= link_to "New Task", new_list_task_path(@list)%>
-<% @list.tasks.each do |tasks| %>
+<% @list.tasks.each do |task| %>
 <ul>
   <li><%= task.bullet %></li>
 </ul>

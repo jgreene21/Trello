@@ -1,0 +1,12 @@
+<h1><%= @task.id ? 'Edit Task info' : 'Create new Task' %></h1>
+
+<%= form_with(model: [@list, @task], local: true, class: "ui form") do |f| %>
+  <div class = "field">
+    <%= f.label :bullet %>
+    <%= f.text_field :bullet, required: true, autofocus: true, placeholder: "To-Do list or something"  %>
+  </div>
+  <div class = 'field'>
+  <%= f.label :priority %>
+  <%= f.number_field :priority %>
+  <%= f.submit nil, class: "ui green button inverted" %>
+  <% end %>
