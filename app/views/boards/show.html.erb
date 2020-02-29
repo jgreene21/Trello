@@ -2,10 +2,10 @@
 
 <h3> <%= @board.name %></h3>
 <hr />
-<p>What would you like to do?</p>
-<br />
+
 <%= link_to 'Edit Board', edit_board_path(@board) %>
 <br />
 <%= link_to 'Delete board', @board, method: :delete %>
 <br></br>
-<%= link_to 'Back', boards_path, class: "ui secondary button" %>
+<%= link_to 'Add List', new_list_path(@list) %>
+<br></br> 

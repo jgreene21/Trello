@@ -1,2 +1,14 @@
-<h1>Boards#new</h1>
-<p>Find me in app/views/boards/new.html.erb</p>
+<h1>New Board</h1>
+<%= form_for @board, :html => {:class => "form center"} do |f| %>
+
+ <div class="form-group">
+
+ <%= f.label :name, class: "form-label" %>
+
+ <%= f.text_field :name, class: "form-control" %>
+
+ </div>
+
+ <%= f.submit class: 'btn btn-primary'%>
+
+<% end %>

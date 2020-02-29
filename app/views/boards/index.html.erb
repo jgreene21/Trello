@@ -1,9 +1,7 @@
 <h1> My Boards</h1>
 
-<div class="ui inverted segment">
-  <div class="ui inverted relaxed divided list">
-    <div class="item">
-      <div class="content">
+<p><%= link_to 'New Board' , new_board_path %></p> 
+
       <% @boards.each do |board| %>
       <hr />
       <%= link_to board.name, board, class: "header" %>
@@ -12,3 +10,4 @@
     </div>
   </div>
  </div> 
+

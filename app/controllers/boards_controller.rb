@@ -1,30 +1,30 @@
 class BoardsController < ApplicationController
-  before_action :set_board, except: [:index, :new, :create]
+  before_action :set_board, only: [:show, :update, :edit, :destroy]
 
   def index
-    @boards = board.all
+    @boards = current_user.boards
   end
  
   def show
-    @lists = @board.lists
   end
 
   def new
-    @board = board.new
+    @board = Board.new
   end
 
-  def edit
-  end
- 
   def create
-    @board = board.new(board_params)
+    @board = current_user.boards.new(board_params)
     if @board.save
-      redirect_to @board
+      redirect_to root_path
     else
       render :new
     end
   end
   
+  def edit
+    render partial: "form"
+  end
+
   def update
     if @board.update(board_params)
       redirect_to @board
@@ -34,29 +34,14 @@ class BoardsController < ApplicationController
   end
 
   def destroy
-    @board.lists.update_all(board_id: nil)
     @board.destroy
-    redirect_to boards_url
+    redirect_to boards_path
   end
 
-  def new_list
-    @lists = list.all.where(board_id: nil)
-  
-  end
-
-  def add_list
-    @board.lists << list.find(params[:list_id])
-    redirect_to board_path(@board)
-  end
-
-  def remove_list
-    list.find(params[:list_id]).update(board_id: nil)
-    redirect_to board_path(@board)
-  end
 
   private
     def set_board
-      @board = board.find(params[:id])
+      @board = current_user.boards.find(params[:id])
     end
 
     def board_params
