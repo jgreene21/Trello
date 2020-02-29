@@ -7,5 +7,8 @@
 <br />
 <%= link_to 'Delete board', @board, method: :delete %>
 <br></br>
-<%= link_to 'Add List', new_list_path(@list) %>
-<br></br> 
+<%= link_to 'Add List', new_board_list_path(@board) %>
+<br>
+
+<br />
+<%= link_to 'lists', board_lists_path(@board) %>
