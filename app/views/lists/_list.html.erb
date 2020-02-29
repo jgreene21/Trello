@@ -1,15 +1,30 @@
 <hr />
-<ul>
-<% @board.lists.each do |list|%>
-<li><%= list.name %> - <%= link_to "Edit Name", edit_board_list_path(@board, list) %></li>
-<ul>
-<%= link_to "Add Task", new_list_task_path(list)%></li>
-<% list.tasks.each do |task|%>
-<li><%= "#{task.priority} - "%><%= task.bullet %>
-<%= link_to "edit", edit_list_task_path(list, task)%>
-</li>
-
-<% end %>
-</ul>
-<% end %>
-</ul>
+ 
+  <ul>
+    <% @board.lists.each do |list|%>
+    <div class ="ui card">
+      <li class = "header padding">
+        <h3>
+          <%= list.name %>
+        </h3>
+      </li>
+      <li class = "meta more-padding">
+        <%= link_to "Edit Name", edit_board_list_path(@board, list) %>
+      </li>
+      <li class = "meta">
+        <%= link_to "Delete", board_list_path(@board, list), method: :delete%>
+      </li>
+      <li class = "meta more-padding">
+        <%= link_to "Add Task", new_list_task_path(list)%>
+      </li>
+      <ul class ="description">
+        <% list.tasks.each do |task|%>
+          <li>
+            <%= "#{task.priority} - "%>
+            <%= task.bullet %>  <%= link_to "edit", edit_list_task_path(list, task)%>
+          </li>
+        <% end %>
+      </ul>
+      <% end %>
+    </div>
+    </ul>

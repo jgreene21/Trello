@@ -32,7 +32,7 @@ class ListsController < ApplicationController
 
   def destroy
     @list.destroy
-    redirect_to board_lists_path
+    redirect_to board_path(@board)
   end
 
   def show
