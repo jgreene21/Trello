@@ -5,7 +5,7 @@ class BoardsController < ApplicationController
   def index
     @boards = current_user.boards
   end
- 
+
   def show
     @lists = @board.lists
   end
@@ -17,7 +17,7 @@ class BoardsController < ApplicationController
   def edit
     #before_action
   end
- 
+
   def create
     @board = board.new(board_params)
     if @board.save
@@ -26,7 +26,7 @@ class BoardsController < ApplicationController
       render :new
     end
   end
-  
+
   def update
     if @board.update(board_params)
       redirect_to @board
@@ -43,7 +43,7 @@ class BoardsController < ApplicationController
 
   def new_list
     @lists = list.all.where(board_id: nil)
-  
+
   end
 
   def add_list
@@ -58,7 +58,7 @@ class BoardsController < ApplicationController
 
   private
     def set_board
-      @board = board.find(params[:id])
+      @board = current_user.boards.find(params[:id])
     end
 
     def board_params
