@@ -33,7 +33,7 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy
-    redirect_to list_tasks_path
+    redirect_to board_path(@board)
   end
 
   def show
