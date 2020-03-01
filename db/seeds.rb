@@ -40,6 +40,7 @@ user = [ User.create(email: 'user@test.com', password: 'password', first_name: '
       position = [1, 2, 3]
       list = board.lists.create(name: Faker::Science.scientist, position: position.sample)
       3.times do
+<<<<<<< HEAD
         priority = [1, 2, 3]
         list.tasks.create(bullet: Faker::Science.element, priority: priority.sample)
       end
@@ -54,3 +55,16 @@ puts 'seeded properly'
 
  
   
+=======
+        position = [1, 2, 3]
+        list = board.lists.create(name: Faker::Science.scientist, postion: position.sample)
+        3.times do
+          priority = [1, 2, 3]
+          task = list.tasks.create(bullet: Faker::Science.element, priority: priority.sample)
+        end
+      end
+    end
+  end
+
+  puts 'seeded properly'
+>>>>>>> 13cc6aebec8fa61bd0078a761b6103b050c664bd
