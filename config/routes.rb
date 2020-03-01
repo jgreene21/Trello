@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
   root 'boards#index'
 
-  # resources :users do 
-  #   resources :boards end 
-
   resources :boards do
     resources :lists end 
 
