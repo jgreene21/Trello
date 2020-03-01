@@ -20,7 +20,7 @@ gem 'jbuilder', '~> 2.7'
 gem "devise"
 gem 'semantic-ui-sass'
 gem "faker", :git => "https://github.com/faker-ruby/faker.git", :branch => "master"
-gem "acts_as_list"
+# gem "acts_as_list"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password

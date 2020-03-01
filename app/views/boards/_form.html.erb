@@ -1,10 +1,13 @@
+ <link href="application.scss" rel="stylesheet" />
+
 <h1><%= @board.id ? 'Edit Board' : 'Create Board' %></h1>
 
 <%= form_with(model: @board, local: true, class: "ui form") do |f| %>
   <div class="field">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name, required: true, autofocus: true, placeholder: "Last Name" %>
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true, autofocus: true, placeholder: "Name" %>
   </div>
 
   <%= f.submit nil, class: "ui green button inverted" %>
 <% end %>
+
