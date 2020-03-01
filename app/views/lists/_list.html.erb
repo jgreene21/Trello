@@ -24,7 +24,7 @@
             <%= "#{task.priority} - "%>
             <%= task.bullet %>  
             <%= link_to "edit", edit_list_task_path(list, task)%>
-            <%= link_to 'delete', list_task_path(list, task), method: :delete%>
+            <%= link_to 'delete', list_task_path(list, task), method: :delete %>
           </li>
         <% end %>
       </ul>
