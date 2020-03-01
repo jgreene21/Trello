@@ -35,8 +35,10 @@
         list = board.lists.create(name: Faker::Science.scientist, postion: position.sample)
         3.times do
           priority = [1, 2, 3]
-          list.tasks.create(bullet: Faker::Science.element, priority: priority.sample)
+          task = list.tasks.create(bullet: Faker::Science.element, priority: priority.sample)
         end
       end
     end
   end
+
+  puts 'seeded properly'
