@@ -64,8 +64,6 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2)
-    acts_as_list (1.0.1)
-      activerecord (>= 4.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     bcrypt (3.1.13)
@@ -286,7 +284,6 @@ PLATFORMS
   x86-mswin32
 
 DEPENDENCIES
-  acts_as_list
   better_errors
   binding_of_caller
   bootsnap (>= 1.4.2)
@@ -313,7 +310,7 @@ DEPENDENCIES
   webpacker (~> 4.0)
 
 RUBY VERSION
-   ruby 2.5.1p57
+   ruby 2.7.0p0
 
 BUNDLED WITH
    2.1.4
