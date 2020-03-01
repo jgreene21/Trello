@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'boards#index'
+  root "static_pages#home"
 
   resources :boards do
     resources :lists end 
