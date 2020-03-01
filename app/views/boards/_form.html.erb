@@ -1,3 +1,5 @@
+ <link href="application.scss" rel="stylesheet" />
+
 <h1><%= @board.id ? 'Edit Board' : 'Create Board' %></h1>
 
 <%= form_with(model: @board, local: true, class: "ui form") do |f| %>
@@ -8,3 +10,4 @@
 
   <%= f.submit nil, class: "ui green button inverted" %>
 <% end %>
+

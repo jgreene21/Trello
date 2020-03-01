@@ -4,10 +4,20 @@
 
       <% @boards.each do |board| %>
       <hr />
-      <%= link_to board.name, board, class: "header" %>
+      
+      <%= link_to board.name, board, class: "massive ui button blue" %>
         <% end %> 
+
+<%= link_to 'Edit Board', edit_board_path(@board) %>
+<br />
+<%= link_to 'Delete board', @board, method: :delete %>
+<br></br>
+<%= link_to 'Add List', new_board_list_path(@board) %>
+<br>
+
+<br />
+
+  <%= render partial: '/lists/list'%>
       </div>
-    </div>
-  </div>
- </div> 
+  
 
